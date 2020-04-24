@@ -1,0 +1,68 @@
+gpf:
+  ros__parameters:
+    downsampling:
+      enable: true
+      leaf_size:
+        xy: 0.0025
+        z: 0.0025
+
+    supervoxel:
+      use_single_camera_transform: true
+      voxel_resolution: 0.01
+      seed_resolution: 0.05
+      importance:
+        spatial: 1.0
+        color: 0.5
+      normal:
+        enable: true
+        importance: 4.0
+        search_radius: 0.025
+      refinement:
+        enable: true
+        iterations: 5
+
+    segmentation:
+      lccp:
+        concavity_tolerance_threshold: 15.0
+        smoothness_threshold: 0.25
+        min_segment_size: 1
+        k_factor: 0
+        sanity_criterion: true
+      cpc:
+        max_cuts: 10
+        cutting_min_segments: 500
+        cutting_min_score: 0.15
+        local_constrain: true
+        directed_cutting: true
+        clean_cutting: true
+        ransac_iterations: 1000
+
+    sample_consensus:
+      min_segment_size: 50
+      plane:
+        enable: true
+        distance_threshold: 0.005
+        probability: 0.99
+        max_iterations: 1000
+        min_inlier_proportion: 0.85
+        merge_precision: 0.25
+      sphere:
+        enable: false
+        distance_threshold: 0.005
+        probability: 0.99
+        max_iterations: 1000
+        min_inlier_proportion: 0.7
+        min_radius: 0.01
+        max_radius: 0.075
+      cylinder:
+        enable: true
+        distance_threshold: 0.005
+        probability: 0.99
+        max_iterations: 1000
+        min_inlier_proportion: 0.7
+        min_radius: 0.005
+        max_radius: 0.075
+
+    publish_markers: true
+    visualise: false
+    use_sim_time: false
