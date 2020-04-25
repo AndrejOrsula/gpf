@@ -13,7 +13,7 @@ from launch.substitutions import ThisLaunchFileDir
 
 def generate_launch_description():
     config_rviz2 = LaunchConfiguration('config_rviz2', default=os.path.join(get_package_share_directory(
-        'gpd'), 'config', 'rviz2.rviz'))
+        'gpf'), 'config', 'rviz2.rviz'))
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
     return LaunchDescription([

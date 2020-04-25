@@ -768,7 +768,6 @@ void GeometricPrimitiveFitting::point_cloud_callback(const sensor_msgs::msg::Poi
         plane_marker.color.g = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
         plane_marker.color.b = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
         markers.markers.push_back(plane_marker);
-        plane_marker.id++;
       }
     }
 
@@ -791,7 +790,6 @@ void GeometricPrimitiveFitting::point_cloud_callback(const sensor_msgs::msg::Poi
         sphere_marker.color.g = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
         sphere_marker.color.b = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
         markers.markers.push_back(sphere_marker);
-        sphere_marker.id++;
       }
     }
 
@@ -819,7 +817,6 @@ void GeometricPrimitiveFitting::point_cloud_callback(const sensor_msgs::msg::Poi
         cylinder_marker.color.g = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
         cylinder_marker.color.b = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
         markers.markers.push_back(cylinder_marker);
-        cylinder_marker.id++;
       }
     }
     pub_markers_->publish(markers);
